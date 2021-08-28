@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyApp';
+  showNavbar = false;
+  constructor(private readonly router: Router) {
+
+  }
+  showNav = () => {
+    this.showNavbar = !this.showNavbar;
+  }
+  navigateTo(){
+    this.router.navigate(['/register']);
+  }
 }
